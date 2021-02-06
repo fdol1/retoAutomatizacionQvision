@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 
-import static com.certificacion.lfpu.userinterfaces.InicioDxHotelPage.*;
+import static com.certificacion.lfpu.userinterfaces.ListoDeBusquedaPage.*;
 
 public class SeleccionaLaTarifa implements Task {
 	

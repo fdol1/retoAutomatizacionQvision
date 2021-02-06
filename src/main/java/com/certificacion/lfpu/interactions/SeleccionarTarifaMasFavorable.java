@@ -1,18 +1,17 @@
 
 package com.certificacion.lfpu.interactions;
 
-import com.certificacion.lfpu.constantes.Constantes;
+import com.certificacion.lfpu.utils.Constantes;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.targets.Target;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.certificacion.lfpu.userinterfaces.InicioDxHotelPage.*;
+import static com.certificacion.lfpu.userinterfaces.ListoDeBusquedaPage.LBL_TOTAL_DIAS;
 
 public class SeleccionarTarifaMasFavorable implements Interaction {
 
@@ -34,7 +33,11 @@ public class SeleccionarTarifaMasFavorable implements Interaction {
         ArrayList<String> precios = new ArrayList<>();
         List<WebElementFacade> lstTarifa = this.lstTarifa.resolveAllFor(actor);
         List<WebElementFacade> lblBotonReserva =  lstBotonReserva.resolveAllFor(actor);
-
+        int precioMenor;
+        Constantes.TOTAL_DIAS = Integer.parseInt(
+                String.valueOf(
+                        Text.of(LBL_TOTAL_DIAS).viewedBy(actor).asString().charAt(0)
+                ));
 
         for (int i = 0; i < lstTarifa.size(); i++) {
             String tarifa = lstTarifa.get(i).getText().trim();
@@ -42,11 +45,10 @@ public class SeleccionarTarifaMasFavorable implements Interaction {
             precios.add(datosValor[1]);
         }
 
-        int precioMenor = Integer.parseInt(precios.get(0));
+        precioMenor = Integer.parseInt(precios.get(0));
 
         for (int i = 1; i < precios.size(); i++) {
-            if(precioMenor > Integer.parseInt(precios.get(i)))
-            {
+            if(precioMenor > Integer.parseInt(precios.get(i))) {
                 precioMenor=Integer.parseInt(precios.get(i));
                 lblBotonReserva.get(i).click();
             }

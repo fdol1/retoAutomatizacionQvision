@@ -2,8 +2,8 @@ package com.certificacion.lfpu.stepsdefinitions;
 
 import com.certificacion.lfpu.models.DatosBusqueda;
 import com.certificacion.lfpu.navegacion.NavegarEn;
+import com.certificacion.lfpu.questions.VerificarElPrecioTotal;
 import com.certificacion.lfpu.tasks.IngresarDatos;
-import com.certificacion.lfpu.tasks.ObtenerDatos;
 import com.certificacion.lfpu.tasks.SeleccionaLaTarifa;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -13,8 +13,10 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.is;
 
 public class VerificarTarifasDeHotel {
 
@@ -40,6 +42,6 @@ public class VerificarTarifasDeHotel {
 
     @Then("^Puede comprobar el precio total con la formula de cantidad de dias por precio por dia$")
     public void puedeComprobarElPrecioTotalConLaFormulaDeCantidadDeDiasPorPrecioPorDia() {
-        theActorInTheSpotlight().attemptsTo(ObtenerDatos.paraCalculo());
+        theActorInTheSpotlight().should(seeThat(VerificarElPrecioTotal.conElPrecioCalculado(),is(true)));
     }
 }
