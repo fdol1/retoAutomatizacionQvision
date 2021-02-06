@@ -1,13 +1,19 @@
 package com.certificacion.lfpu.stepsdefinitions;
 
+import com.certificacion.lfpu.models.DatosBusqueda;
 import com.certificacion.lfpu.navegacion.NavegarEn;
+import com.certificacion.lfpu.tasks.IngresarDatos;
+import com.certificacion.lfpu.tasks.SeleccionaLaTarifa;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
+import java.util.List;
+
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class VerificarTarifasDeHotel {
 
@@ -16,29 +22,22 @@ public class VerificarTarifasDeHotel {
         OnStage.setTheStage(new OnlineCast());
     }
 
-    @Given("^El usuario ingresa a la pagina de busqueda$")
-    public void elUsuarioIngresaALaPaginaDeBusqueda() {
-        theActorCalled("usuario").attemptsTo(NavegarEn.DxHotel());
+
+    @Given("^El \"([^\"]*)\" ingresa a la pagina de busqueda$")
+    public void elIngresaALaPaginaDeBusqueda(String actor) {
+        theActorCalled(actor).attemptsTo(NavegarEn.DxHotel());
     }
 
-    @Given("^El usuario selecciona su \"([^\"]*)\"$")
-    public void elUsuarioSeleccionaSu(String arg1) {
+    @Given("^El usuario ingresa los datos de viaje y busca los resultados$")
+    public void elUsuarioIngresaLosDatosDeViajeYBuscaLosResultados(List<DatosBusqueda> datosBusquedaList) {
+        theActorInTheSpotlight().attemptsTo(IngresarDatos.paraLaBusqueda(datosBusquedaList));
+
     }
 
-    @Given("^Ingresa el \"([^\"]*)\" y el \"([^\"]*)\"$")
-    public void ingresaElYEl(String arg1, String arg2) {
+    @Given("^verifica el precio mas favorable en la lista de resultados$")
+    public void verificaElPrecioMasFavorableEnLaListaDeResultados() {
+        theActorInTheSpotlight().attemptsTo(SeleccionaLaTarifa.masFavorable());
     }
 
-    @Then("^Puede ingresar la de \"([^\"]*)\"$")
-    public void puedeIngresarLaDe(String arg1) {
-    }
-
-    @Then("^Seleccionar el \"([^\"]*)\" y el \"([^\"]*)\"$")
-    public void seleccionarElYEl(String arg1, String arg2) {
-    }
-
-    @Then("^Podra verificar las tarifas listadas de la busqueda$")
-    public void podraVerificarLasTarifasListadasDeLaBusqueda() {
-    }
 
 }

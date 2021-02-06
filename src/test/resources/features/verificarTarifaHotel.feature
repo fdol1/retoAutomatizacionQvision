@@ -7,15 +7,14 @@
     De la lista de resultados obtenidos
 
   Background: El usuario ingresa al portal DX Hotels
-    Given El usuario ingresa a la pagina de busqueda
+    Given El "usuario" ingresa a la pagina de busqueda
 
     @VerTarifasDeHotel
-    Scenario Outline: El usuario quiere conocer la mejor tarifa de hotel
-      Given El usuario selecciona su "<lugarDestino>"
-      And Ingresa el "<diaLlegada>" y el "<diaSalida>"
-      Then Puede ingresar la de "<cantidadHabitaciones>"
-      And Seleccionar el "<numeroDeAdultos>" y el "<numeroDeInfantes>"
-      Then Podra verificar las tarifas listadas de la busqueda
-      Examples:
-        | lugarDestino | diaLlegada | diaSalida | cantidadHabitaciones | numeroDeAdultos | numeroDeInfantes |
+    Scenario: El usuario quiere conocer la mejor tarifa de hotel
+      Given El usuario ingresa los datos de viaje y busca los resultados
+        | lugarDestino | diaLlegada | diaSalida | numeroDeHabitaciones | numeroDeAdultos | numeroDeInfantes |
         | Los Angeles  | 2/10/2021  | 2/15/2021 | 1                    | 2               | 0                |
+      And verifica el precio mas favorable en la lista de resultados
+
+
+
