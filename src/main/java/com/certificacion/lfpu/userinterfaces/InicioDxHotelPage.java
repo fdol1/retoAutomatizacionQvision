@@ -47,13 +47,32 @@ public class InicioDxHotelPage {
     public static final Target BOTON_BUSCAR = Target.the("boton search").
             locatedBy("//*/span[contains(text(),'SEARCH')]");
 
+    /**************************************pagina de listados de hoteles*********************************************/
+
     public static final Target CAMPO_TARIFA= Target.the("campo tarifa").
             locatedBy("//*/div[contains(@class,'night-button')]/div/p");
 
-    public static final Target VERIFICAR_RESULTADO= Target.the("resultado busqueda de hoteles").
-            locatedBy("//div[@class='dx-content dx-content-content dx-transition-inner-wrapper dx-active-view']//p[@class='text-result'][contains(text(),'RESULTS')]");
+    public static final Target BOTON_RESERVAR =Target.the("boton reservar").
+            locatedBy("//*/div[contains(@class,'current-hotels')]/div/div/div[contains(@class,'night-button')]/div[contains(@class,'book-it gray-button dx-button dx-button-normal dx-button-mode-contained dx-widget dx-button-has-text')]");
 
-    public static final Target SELECCIONAR_HOTEL=Target.the("seleccionar hoteles").
-            locatedBy("//*/div[contains(@class,'current-hotels')]/div/div/div/div/span[contains(@class,'name-hotel')]");
+    public static final Target LBL_TOTAL_DIAS =Target.the("dias de reserva").
+            locatedBy("//*/div[contains(@class,'site')]/p[contains(@xpath,'1')]");
+
+    public static final Target LBL_CANTIDAD_HOTELES =Target.the("dias de reserva").
+            locatedBy("//*/div[contains(@class,'search-info-hotels')]/div/div/div[contains(@class, 'result-serch')]/p[contains(@class, 'count')]");
+
+    public static final Target BTN_SIGUIENTE =Target.the("Pasar a siguiente pagina").
+            locatedBy("//*/div[contains(@class,'switch switch-right')]");
+
+
+
+    /**************************************pagina detalle de hotel*********************************************/
+
+    public static final Target TXT_PRECIO_POR_DIA =Target.the("precio por dia").
+            locatedBy("//*/div[contains(@class,'total-pay')]/h4[contains(@class,'price')]");
+
+    public static final Target TXT_PRECIO_TOTAL =Target.the("precio total").
+            locatedBy("//*/div[contains(@class,'sum')]/h4[contains(@data-bind,'text')]");
+
 
 }

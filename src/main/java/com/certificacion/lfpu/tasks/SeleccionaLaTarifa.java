@@ -5,8 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 
-import static com.certificacion.lfpu.userinterfaces.InicioDxHotelPage.CAMPO_TARIFA;
-import static com.certificacion.lfpu.userinterfaces.InicioDxHotelPage.SELECCIONAR_HOTEL;
+import static com.certificacion.lfpu.userinterfaces.InicioDxHotelPage.*;
 
 public class SeleccionaLaTarifa implements Task {
 	
@@ -14,7 +13,7 @@ public class SeleccionaLaTarifa implements Task {
     
     @Override
     public <T extends Actor> void performAs (T actor) {
-    	actor.attemptsTo(tarifaMenor.enPrecio(CAMPO_TARIFA, SELECCIONAR_HOTEL));
+    	actor.attemptsTo(tarifaMenor.enPrecio(CAMPO_TARIFA, BOTON_RESERVAR));
     }
 
     public static SeleccionaLaTarifa masFavorable() {
