@@ -22,7 +22,6 @@ public class IngresarDatos implements Task {
     private List <DatosBusqueda> listaDeDatos;
 
     public IngresarDatos (List<DatosBusqueda> listaDeDatos){
-        super();
         this.listaDeDatos = listaDeDatos;
     }
 
@@ -54,8 +53,8 @@ public class IngresarDatos implements Task {
                             WebElementStateMatchers.isVisible()).forNoMoreThan(5).seconds(),
                     Click.on(CAMPO_NUMERO_HABITACIONES.of(listaDeDatos.get(0).getNumeroDeHabitaciones())),
 
-                    Click.on(LISTA_NUMERO_ADULTOS),
-                    WaitUntil.the(CAMPO_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeInfantes()),
+                    Click.on(LISTA_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos())),
+                    WaitUntil.the(CAMPO_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos()),
                             WebElementStateMatchers.isVisible()).forNoMoreThan(5).seconds(),
                     Click.on(CAMPO_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos())),
 

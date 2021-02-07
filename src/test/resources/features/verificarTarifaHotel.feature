@@ -16,6 +16,3 @@
         | Paris        | 3/10/2021  | 3/15/2021 | 1                    | 2               | 0                |
       And verifica el precio mas favorable en la lista de resultados
       Then Puede comprobar el precio total con la formula de cantidad de dias por precio por dia
-
-
-

@@ -11,7 +11,5 @@ import org.junit.runner.RunWith;
         glue ="com.certificacion.lfpu.stepsdefinitions",
         snippets = SnippetType.CAMELCASE
 )
-
 public class VerificarTarifaHotel {
-
 }

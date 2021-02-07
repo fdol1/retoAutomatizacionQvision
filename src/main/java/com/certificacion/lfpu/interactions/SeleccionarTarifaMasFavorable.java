@@ -34,14 +34,15 @@ public class SeleccionarTarifaMasFavorable implements Interaction {
         List<WebElementFacade> lstTarifa = this.lstTarifa.resolveAllFor(actor);
         List<WebElementFacade> lblBotonReserva =  lstBotonReserva.resolveAllFor(actor);
         int precioMenor;
+
         Constantes.TOTAL_DIAS = Integer.parseInt(
                 String.valueOf(
                         Text.of(LBL_TOTAL_DIAS).viewedBy(actor).asString().charAt(0)
                 ));
 
-        for (int i = 0; i < lstTarifa.size(); i++) {
-            String tarifa = lstTarifa.get(i).getText().trim();
-            String[] datosValor= tarifa.split("\\$");
+        for (WebElementFacade webElementFacade : lstTarifa) {
+            String tarifa = webElementFacade.getText().trim();
+            String[] datosValor = tarifa.split("\\$");
             precios.add(datosValor[1]);
         }
 
