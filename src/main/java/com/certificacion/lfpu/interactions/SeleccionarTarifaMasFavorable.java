@@ -54,11 +54,5 @@ public class SeleccionarTarifaMasFavorable implements Interaction {
                 lblBotonReserva.get(i).click();
             }
         }
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

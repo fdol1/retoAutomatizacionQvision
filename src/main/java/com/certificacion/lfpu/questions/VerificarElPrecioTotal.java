@@ -24,6 +24,16 @@ public class VerificarElPrecioTotal implements Question<Boolean> {
 	@Override
 	public Boolean answeredBy(Actor actor) {
 
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		//actor.attemptsTo(
+		//		WaitUntil.the(TXT_PRECIO_POR_DIA,isClickable()).forNoMoreThan(5).seconds()
+		//);
+
 		List<WebElementFacade> lstPrecioPorDia = TXT_PRECIO_POR_DIA.resolveAllFor(actor);
 		List<WebElementFacade> lstPrecioTotal = TXT_PRECIO_TOTAL.resolveAllFor(actor);
 
