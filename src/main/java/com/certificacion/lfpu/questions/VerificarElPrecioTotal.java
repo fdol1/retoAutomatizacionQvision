@@ -26,6 +26,7 @@ public class VerificarElPrecioTotal implements Question<Boolean> {
 
 		try {
 			Thread.sleep(5000);
+			Constantes.logger.info("Tiempo de espera agotado: " + 5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
