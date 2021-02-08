@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.certificacion.lfpu.userinterfaces.ListoDeBusquedaPage.LBL_TOTAL_DIAS;
+import static com.certificacion.lfpu.userinterfaces.ListadoDeBusquedaPage.LBL_TOTAL_DIAS;
 
 public class SeleccionarTarifaMasFavorable implements Interaction {
 

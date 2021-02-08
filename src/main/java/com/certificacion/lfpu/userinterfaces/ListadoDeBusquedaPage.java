@@ -2,7 +2,7 @@ package com.certificacion.lfpu.userinterfaces;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-public class ListoDeBusquedaPage {
+public class ListadoDeBusquedaPage {
 
     public static final Target CAMPO_TARIFA=
             Target.the("campo tarifa")

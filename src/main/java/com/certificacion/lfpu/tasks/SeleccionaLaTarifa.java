@@ -5,8 +5,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 
-import static com.certificacion.lfpu.userinterfaces.ListoDeBusquedaPage.CAMPO_TARIFA;
-import static com.certificacion.lfpu.userinterfaces.ListoDeBusquedaPage.BOTON_RESERVAR;
+import static com.certificacion.lfpu.userinterfaces.ListadoDeBusquedaPage.CAMPO_TARIFA;
+import static com.certificacion.lfpu.userinterfaces.ListadoDeBusquedaPage.BOTON_RESERVAR;
 
 public class SeleccionaLaTarifa implements Task {
 
