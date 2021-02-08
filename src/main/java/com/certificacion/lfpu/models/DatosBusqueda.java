@@ -13,47 +13,23 @@ public class DatosBusqueda {
         return lugarDestino;
     }
 
-    public void setLugarDestino(String lugarDestino) {
-        this.lugarDestino = lugarDestino;
-    }
-
     public String getDiaLlegada() {
         return diaLlegada;
-    }
-
-    public void setDiaLlegada(String diaLlegada) {
-        this.diaLlegada = diaLlegada;
     }
 
     public String getDiaSalida() {
         return diaSalida;
     }
 
-    public void setDiaSalida(String diaSalida) {
-        this.diaSalida = diaSalida;
-    }
-
     public String getNumeroDeHabitaciones() {
         return numeroDeHabitaciones;
-    }
-
-    public void setNumeroDeHabitaciones(String numeroDeHabitaciones) {
-        this.numeroDeHabitaciones = numeroDeHabitaciones;
     }
 
     public String getNumeroDeAdultos() {
         return numeroDeAdultos;
     }
 
-    public void setNumeroDeAdultos(String numeroDeAdultos) {
-        this.numeroDeAdultos = numeroDeAdultos;
-    }
-
     public String getNumeroDeInfantes() {
         return numeroDeInfantes;
-    }
-
-    public void setNumeroDeInfantes(String numeroDeInfantes) {
-        this.numeroDeInfantes = numeroDeInfantes;
     }
 }

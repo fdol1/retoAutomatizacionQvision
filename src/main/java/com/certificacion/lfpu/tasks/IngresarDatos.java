@@ -19,7 +19,7 @@ import static com.certificacion.lfpu.utils.Constantes.ELEMENTO_NO_ENCONTRADO;
 
 public class IngresarDatos implements Task {
 
-    private List <DatosBusqueda> listaDeDatos;
+    private final List <DatosBusqueda> listaDeDatos;
 
     public IngresarDatos (List<DatosBusqueda> listaDeDatos){
         this.listaDeDatos = listaDeDatos;
@@ -36,10 +36,10 @@ public class IngresarDatos implements Task {
 
         try {
             actor.attemptsTo(
-                    Click.on(LISTA_LOCACION.of(listaDeDatos.get(0).getLugarDestino())),
-                    WaitUntil.the(CAMPO_LOCACION.of(listaDeDatos.get(0).getLugarDestino()),
+                    Click.on(LISTA_LOCACION),
+                    WaitUntil.the(CAMPO_LOCACION.of(listaDeDatos.get(0).getLugarDestino().trim()),
                             WebElementStateMatchers.isVisible()).forNoMoreThan(5).seconds(),
-                    Click.on(CAMPO_LOCACION.of(listaDeDatos.get(0).getLugarDestino())),
+                    Click.on(CAMPO_LOCACION.of(listaDeDatos.get(0).getLugarDestino().trim())),
 
                     Click.on(CAMPO_FECHA_INICIO),
                     Enter.theValue(listaDeDatos.get(0).getDiaLlegada()).into(CAMPO_FECHA_INICIO),
@@ -53,15 +53,15 @@ public class IngresarDatos implements Task {
                             WebElementStateMatchers.isVisible()).forNoMoreThan(5).seconds(),
                     Click.on(CAMPO_NUMERO_HABITACIONES.of(listaDeDatos.get(0).getNumeroDeHabitaciones())),
 
-                    Click.on(LISTA_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos())),
-                    WaitUntil.the(CAMPO_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos()),
+                    Click.on(LISTA_NUMERO_ADULTOS),
+                    WaitUntil.the(CAMPO_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos().trim()),
                             WebElementStateMatchers.isVisible()).forNoMoreThan(5).seconds(),
-                    Click.on(CAMPO_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos())),
+                    Click.on(CAMPO_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos().trim())),
 
                     Click.on(LISTA_NUMERO_INFANTES),
-                    WaitUntil.the(CAMPO_NUMERO_INFANTES.of(listaDeDatos.get(0).getNumeroDeInfantes()),
+                    WaitUntil.the(CAMPO_NUMERO_INFANTES.of(listaDeDatos.get(0).getNumeroDeInfantes().trim()),
                             WebElementStateMatchers.isVisible()).forNoMoreThan(5).seconds(),
-                    Click.on(CAMPO_NUMERO_INFANTES.of(listaDeDatos.get(0).getNumeroDeInfantes())),
+                    Click.on(CAMPO_NUMERO_INFANTES.of(listaDeDatos.get(0).getNumeroDeInfantes().trim())),
 
                     Click.on(BOTON_BUSCAR)
             );

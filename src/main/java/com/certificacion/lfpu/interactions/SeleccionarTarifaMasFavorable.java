@@ -15,8 +15,8 @@ import static com.certificacion.lfpu.userinterfaces.ListoDeBusquedaPage.LBL_TOTA
 
 public class SeleccionarTarifaMasFavorable implements Interaction {
 
-    private Target lstTarifa;
-    private Target lstBotonReserva;
+    private final Target lstTarifa;
+    private final Target lstBotonReserva;
 
     public SeleccionarTarifaMasFavorable(Target lstTarifa, Target lstBotonReserva) {
         this.lstTarifa = lstTarifa;

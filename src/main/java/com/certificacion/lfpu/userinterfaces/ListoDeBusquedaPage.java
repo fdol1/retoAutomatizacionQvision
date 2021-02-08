@@ -15,12 +15,4 @@ public class ListoDeBusquedaPage {
     public static final Target LBL_TOTAL_DIAS =
             Target.the("dias de reserva")
                     .locatedBy("//*/div[contains(@class,'site')]/p[contains(@data-bind,'text: resultAdults')]");
-
-    public static final Target LBL_CANTIDAD_HOTELES =
-            Target.the("dias de reserva")
-                    .locatedBy("//*/div[contains(@class,'search-info-hotels')]/div/div/div[contains(@class, 'result-serch')]/p[contains(@class, 'count')]");
-
-    public static final Target BTN_SIGUIENTE =
-            Target.the("Pasar a siguiente pagina")
-                    .locatedBy("//*/div[contains(@class,'switch switch-right')]");
 }

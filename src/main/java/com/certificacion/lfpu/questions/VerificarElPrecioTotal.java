@@ -1,5 +1,6 @@
 package com.certificacion.lfpu.questions;
 
+import com.certificacion.lfpu.utils.AccionesObjetos;
 import com.certificacion.lfpu.utils.Constantes;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
@@ -12,11 +13,6 @@ import static com.certificacion.lfpu.userinterfaces.DetalleResultadoHotelPage.TX
 
 public class VerificarElPrecioTotal implements Question<Boolean> {
 
-
-	public VerificarElPrecioTotal() {
-		super();
-	}
-
 	public static VerificarElPrecioTotal conElPrecioCalculado() {
 		return new VerificarElPrecioTotal();
 	}
@@ -24,16 +20,7 @@ public class VerificarElPrecioTotal implements Question<Boolean> {
 	@Override
 	public Boolean answeredBy(Actor actor) {
 
-		try {
-			Thread.sleep(5000);
-			Constantes.logger.info("Tiempo de espera agotado: " + 5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		//actor.attemptsTo(
-		//		WaitUntil.the(TXT_PRECIO_POR_DIA,isClickable()).forNoMoreThan(5).seconds()
-		//);
+		AccionesObjetos.falsaEspera(5000);
 
 		List<WebElementFacade> lstPrecioPorDia = TXT_PRECIO_POR_DIA.resolveAllFor(actor);
 		List<WebElementFacade> lstPrecioTotal = TXT_PRECIO_TOTAL.resolveAllFor(actor);

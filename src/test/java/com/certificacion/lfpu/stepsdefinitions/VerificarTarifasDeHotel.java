@@ -1,7 +1,7 @@
 package com.certificacion.lfpu.stepsdefinitions;
 
 import com.certificacion.lfpu.models.DatosBusqueda;
-import com.certificacion.lfpu.navegacion.NavegarEn;
+import com.certificacion.lfpu.tasks.Abrir;
 import com.certificacion.lfpu.questions.VerificarElPrecioTotal;
 import com.certificacion.lfpu.tasks.IngresarDatos;
 import com.certificacion.lfpu.tasks.SeleccionaLaTarifa;
@@ -27,7 +27,7 @@ public class VerificarTarifasDeHotel {
 
     @Given("^El \"([^\"]*)\" ingresa a la pagina de busqueda$")
     public void elIngresaALaPaginaDeBusqueda(String actor) {
-        theActorCalled(actor).attemptsTo(NavegarEn.DxHotel());
+        theActorCalled(actor).wasAbleTo(Abrir.portalDxHotels());
     }
 
     @Given("^El usuario ingresa los datos de viaje y busca los resultados$")
