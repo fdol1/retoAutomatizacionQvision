@@ -57,7 +57,7 @@ public class IngresarDatos implements Task {
                 Click.on(LISTA_NUMERO_ADULTOS)
         );
 
-        AccionesObjetos.falsaEspera(500);
+        AccionesObjetos.falsaEspera(300);
 
         actor.attemptsTo(
                 WaitUntil.the(CAMPO_NUMERO_ADULTOS.of(listaDeDatos.get(0).getNumeroDeAdultos().trim()),
@@ -67,7 +67,7 @@ public class IngresarDatos implements Task {
                 Click.on(LISTA_NUMERO_INFANTES)
         );
 
-        AccionesObjetos.falsaEspera(500);
+        AccionesObjetos.falsaEspera(300);
 
         actor.attemptsTo(
                 WaitUntil.the(CAMPO_NUMERO_INFANTES.of(listaDeDatos.get(0).getNumeroDeInfantes().trim()),
