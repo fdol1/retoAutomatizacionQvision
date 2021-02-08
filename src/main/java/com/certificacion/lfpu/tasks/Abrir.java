@@ -10,7 +10,7 @@ public class Abrir implements Task{
 
     private InicioDxPage inicioDxPage;
 
-    public static Abrir portalDxHotels(){
+    public static Abrir elPortalDxHotels(){
         return Tasks.instrumented(Abrir.class);
     }
 

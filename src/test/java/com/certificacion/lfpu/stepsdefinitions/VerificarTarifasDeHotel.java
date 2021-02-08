@@ -27,7 +27,7 @@ public class VerificarTarifasDeHotel {
 
     @Given("^El \"([^\"]*)\" ingresa a la pagina de busqueda$")
     public void elIngresaALaPaginaDeBusqueda(String actor) {
-        theActorCalled(actor).wasAbleTo(Abrir.portalDxHotels());
+        theActorCalled(actor).wasAbleTo(Abrir.elPortalDxHotels());
     }
 
     @Given("^El usuario ingresa los datos de viaje y busca los resultados$")
