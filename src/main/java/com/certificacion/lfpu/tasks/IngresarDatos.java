@@ -33,7 +33,6 @@ public class IngresarDatos implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.remember("Data", listaDeDatos);
-
         actor.attemptsTo(
                 WaitUntil.the(LISTA_LOCACION,isVisible()).forNoMoreThan(5).seconds(),
                 Click.on(LISTA_LOCACION),
@@ -52,7 +51,6 @@ public class IngresarDatos implements Task {
                 WaitUntil.the(CAMPO_NUMERO_HABITACIONES.of(listaDeDatos.get(0).getNumeroDeHabitaciones()),
                         WebElementStateMatchers.isVisible()).forNoMoreThan(5).seconds(),
                 Click.on(CAMPO_NUMERO_HABITACIONES.of(listaDeDatos.get(0).getNumeroDeHabitaciones())),
-
 
                 Click.on(LISTA_NUMERO_ADULTOS)
         );
